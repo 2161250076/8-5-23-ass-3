@@ -1,0 +1,20 @@
+import math
+def solve(a,b):
+    n=2500001
+    seive[1]*n
+    seive[0]=0
+    seive[1]=0
+    m=int(math.sqrt(n))
+    for i in range(2,m+1):
+        if seive[i]==1:
+            for j in range(i*i,n,i):
+                seive[j]=0
+l=[]
+for i in range(a,b+1):
+    if seive[i]==1:
+        l.append(i)
+print(len(l))
+t=int(input())
+for i in range(0,t):
+    a,b=map(int,input().split())
+    solve(a,b)
